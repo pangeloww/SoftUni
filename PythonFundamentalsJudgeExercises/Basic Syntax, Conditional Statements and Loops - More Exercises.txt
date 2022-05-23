@@ -1,0 +1,42 @@
+01. Find The Largest
+number = list(input())
+number.sort(reverse=True)
+print(''.join(number))
+
+02.Find The Capitals
+string = input()
+ind = []
+for i in range(len(string)):
+    if string[i].isupper():
+        ind.append(i)
+    else:
+        continue
+print(ind)
+
+03. Wolf In Sheep's Clothing
+array = input().split(", ")
+ 
+if array.pop() == "wolf":
+    print("Please go away and stop eating my sheep")
+    raise SystemExit
+ 
+arrReversed = array[::-1]
+ 
+for i in range(len(arrReversed)):
+    if arrReversed[i] != "sheep":
+        print(f"Oi! Sheep number {i + 1}! You are about to be eaten by a wolf!")
+
+04. Sum Of A Beach
+import re
+long_word = input()
+
+ls1 = re.findall("fish", long_word, flags=re.IGNORECASE)
+ls2 = re.findall("sun", long_word, flags=re.IGNORECASE)
+ls3 = re.findall("water", long_word, flags=re.IGNORECASE)
+ls4 = re.findall("sand", long_word, flags=re.IGNORECASE)
+ls = ls1 + ls2 + ls3 + ls4
+
+if not ls:
+    print(0)
+else:
+    print(len(ls))

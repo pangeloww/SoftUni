@@ -1,0 +1,89 @@
+01. Number Definer
+n = float(input())
+
+if n == 0:
+    print("zero")
+elif n > 0:
+    if n < 1:
+        print("small positive")
+    elif n > 1000000:
+        print("large positive")
+    else:
+        print("positive")
+else:
+    if abs(n) < 1:
+        print("small negative")
+    elif abs(n) > 1000000:
+        print("large negative")
+    else:
+        print("negative")
+
+02. Largest Of Three Numbers
+n1 = int(input())
+n2 = int(input())
+n3 = int(input())
+
+if n1 > n2 and n1 > n3:
+    print(n1)
+elif n2 > n1 and n2 > n3:
+    print(n2)
+elif n3 > n2 and n3 > n1:
+    print(n3)
+
+03. Word Reverse
+txt = input()
+
+reversed_word = ""
+
+for i in range(len(txt)-1,-1,-1):
+    reversed_word += txt[i]
+
+print(reversed_word)
+
+04. Even Numbers
+n = int(input())
+even = 0
+for numbers in range(1, n + 1):
+    is_even_or_odd = int(input())
+    if is_even_or_odd % 2 == 0:
+        even += 1
+        if even == n:
+            print("All numbers are even.")
+    else:
+        print(f"{is_even_or_odd} is odd!")
+        break
+
+05. Number Between 1 and 100
+n = float(input())
+
+while n < 1 or n > 100:
+    n = float(input())
+
+print(f"The number {n} is between 1 and 100")
+
+06. Shopping
+budget = int(input())
+command = input()
+
+while command != "End":
+    product_price = int(command)
+    budget -= product_price
+    if budget < 0:
+        print("You went in overdraft!")
+        break
+    command = input()
+else:
+    print("You bought everything needed.")
+
+07. Patterns
+n = int(input())
+
+for i in range(1, n + 1):
+    for j in range(0, i):
+        print("*", end="")
+    print()
+
+for i in range(n - 1, 0 , -1):
+    for j in range(0, i):
+        print("*", end="")
+    print()
